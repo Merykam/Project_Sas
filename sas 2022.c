@@ -315,7 +315,7 @@ void SupprimerStock(){
 	int i,j;
 	
 	printf("Entrer le code de produit que vous voulez supprimer :");
-	scanf("%s",code);
+	scanf("%d",&code);
 	for(i=0;i<C;i++){
 		if(p[i].code==code){
 			for(j=i;j<C;j++){
@@ -328,7 +328,7 @@ void SupprimerStock(){
 			break;
 				
 		}else{
-			printf("ce produit n est pas disponible.");
+			printf("\n Ce produit n est pas disponible.");
 			break;
 		}
 		
@@ -343,11 +343,13 @@ void SupprimerStock(){
 void StatistiqueVente(){
 	float min ;
 	float max ;
-	float prixtotal=0 ;
-	float moyenne=0 ;
+	float prixtotal ;
+	float moyenne ;
 	int totalquantite=0 ;
 	min=achat[0].prix*1.15;
 	max=achat[0].prix*1.15;
+	prixtotal=0;
+	moyenne=0;
 	
 	for(i=0;i<ContAchat;i++){
 		prixtotal=prixtotal+achat[i].prixtotal;
